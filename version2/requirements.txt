@@ -1,0 +1,7 @@
+beautifulsoup4==4.13.4
+fastapi==0.115.14
+openai==1.93.0
+pydantic==2.11.7
+python-dotenv==1.1.1
+recipe_scrapers==15.8.0
+Requests==2.32.4

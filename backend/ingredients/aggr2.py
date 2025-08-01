@@ -3,7 +3,7 @@ from .transform_recipes import RecipeProcessor
 from google import genai
 from typing import Optional
 
-GEMINI_API_KEY = "AIzaSyAwrOR3hN6exuYZ5DUlxQJ0xK1tvjkIQX4"  # Replace with your actual API key
+GEMINI_API_KEY = ""  # Replace with your actual API key
 
 def structure_llm(recipe_data : str, api_key: str = GEMINI_API_KEY , model: str = "gemini-1.5-flash") -> Optional[str]:
     """
