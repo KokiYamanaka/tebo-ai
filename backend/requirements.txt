@@ -1,0 +1,11 @@
+beautifulsoup4==4.13.4
+deep_translator==1.11.4
+numpy==2.3.0
+openai==1.85.0
+pinecone==7.0.2
+protobuf==4.25.3
+Requests==2.32.4
+google-genai
+fastapi 
+uvicorn[standard]
+

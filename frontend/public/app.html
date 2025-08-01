@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AirCook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✅ Google Analytics Setup -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRBD51JD3V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-VRBD51JD3V'); // default pageview
+  </script>
+  <script async defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script>
+ 
+</head>
+
+<body class="bg-gray-100">
+  <div class="w-full overflow-x-hidden">
+
+    <!-- Hero / Meal-planner section -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+  <h2 class="apple-headline mb-4">One Tap. Full Week.</h2>
+ One plan.</p>
+
+  <input
+    id="recipe-input"
+    type="text"
+    placeholder="e.g. spicy pork"
+    class="apple-input mb-4"
+  />
+
+  <button id="btn-find-plan" class="apple-button mb-12">
+    Find Meal Plan
+  </button>
+
+  <!-- ✅ FIXED: swipe container with full screen width cards -->
+<!-- ✅ Mobile-friendly full-width swiper -->
+<div class="flex flex-nowrap overflow-x-auto snap-x snap-mandatory scroll-smooth w-full hide-scrollbar">
+  <!-- Card 1 -->
+  <div class="w-screen px-4 shrink-0 snap-start">
+    <div class="card bg-white rounded-[28px] h-[500px] p-6 flex flex-col items-start text-left">
+      <h3 class="card-title font-bold text-lg mb-2">Loading...</h3>
+      <p class="card-desc text-sm">Waiting for recipe</p>
+      <a href="#" target="_blank" class="card-link mt-2 text-sm text-sky-500 hover:underline">See Recipe</a>
+      <div class="image-card bg-gray-100 rounded-xl shadow-sm overflow-hidden w-full h-[300px] mt-auto">
+        <img class="card-image w-full h-full object-cover" src="" alt="Recipe image" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="w-screen px-4 shrink-0 snap-start">
+    <div class="card bg-white rounded-[28px] h-[500px] p-6 flex flex-col items-start text-left">
+      <h3 class="card-title font-bold text-lg mb-2">Loading...</h3>
+      <p class="card-desc text-sm">Waiting for recipe</p>
+      <a href="#" target="_blank" class="card-link mt-2 text-sm text-sky-500 hover:underline">See Recipe</a>
+      <div class="image-card bg-gray-100 rounded-xl shadow-sm overflow-hidden w-full h-[300px] mt-auto">
+        <img class="card-image w-full h-full object-cover" src="" alt="Recipe image" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="w-screen px-4 shrink-0 snap-start">
+    <div class="card bg-white rounded-[28px] h-[500px] p-6 flex flex-col items-start text-left">
+      <h3 class="card-title font-bold text-lg mb-2">Loading...</h3>
+      <p class="card-desc text-sm">Waiting for recipe</p>
+      <a href="#" target="_blank" class="card-link mt-2 text-sm text-sky-500 hover:underline">See Recipe</a>
+      <div class="image-card bg-gray-100 rounded-xl shadow-sm overflow-hidden w-full h-[300px] mt-auto">
+        <img class="card-image w-full h-full object-cover" src="" alt="Recipe image" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="w-screen px-4 shrink-0 snap-start">
+    <div class="card bg-white rounded-[28px] h-[500px] p-6 flex flex-col items-start text-left">
+      <h3 class="card-title font-bold text-lg mb-2">Loading...</h3>
+      <p class="card-desc text-sm">Waiting for recipe</p>
+      <a href="#" target="_blank" class="card-link mt-2 text-sm text-sky-500 hover:underline">See Recipe</a>
+      <div class="image-card bg-gray-100 rounded-xl shadow-sm overflow-hidden w-full h-[300px] mt-auto">
+        <img class="card-image w-full h-full object-cover" src="" alt="Recipe image" />
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Shopping List section -->
+    <section class="py-20 bg-white text-center px-6">
+      <h2 class="section-title">Shopping List</h2>
+      <p class="apple-subheadline mb-8">Grab every ingredient in one go.</p>
+      <button id="btn-shopping-list" class="apple-button mb-12">Generate Shopping List</button>
+      <div class="flex flex-wrap justify-center gap-6">
+        <div id="category-meat" class="card bg-white rounded-2xl p-6 w-[260px] max-h-[380px] overflow-y-auto flex flex-col items-start">
+          <h3 class="card-title font-bold text-lg mb-3 border-b border-gray-200 w-full pb-2">Meat</h3>
+          <div id="content-meat" class="space-y-1 text-sm text-left card-desc"></div>
+        </div>
+        <div id="category-vegetables" class="card bg-white rounded-2xl p-6 w-[260px] max-h-[380px] overflow-y-auto flex flex-col items-start">
+          <h3 class="card-title font-bold text-lg mb-3 border-b border-gray-200 w-full pb-2">Vegetables</h3>
+          <div id="content-vegetables" class="space-y-1 text-sm text-left card-desc"></div>
+        </div>
+        <div id="category-seasonings" class="card bg-white rounded-2xl p-6 w-[260px] max-h-[380px] overflow-y-auto flex flex-col items-start">
+          <h3 class="card-title font-bold text-lg mb-3 border-b border-gray-200 w-full pb-2">Seasonings</h3>
+          <div id="content-seasonings" class="space-y-1 text-sm text-left card-desc"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cost & Servings section -->
+    <section class="py-20 bg-gray-100 text-center px-6">
+      <h2 class="section-title">Estimated Cost &amp; Servings</h2>
+      <p class="apple-subheadline mb-8">Cost breakdown vs meal kits</p>
+
+
+      <button id="btn-cost-breakdown" class="apple-button mb-8">
+        Calculate My Savings
+      </button>
+       
+
+
+      <div class="overflow-x-auto">
+      <table class="apple-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>You</th>
+            <th>HelloFresh</th>
+            <th>Savings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Per Serving</td>
+            <td id="you-per-serving">$5.00</td>
+            <td id="hellofresh-per-serving">$10.99</td>
+            <td id="savings-per-serving" class="text-green-600 font-semibold">$6.00</td>
+          </tr>
+          <tr>
+            <td>Total (<span id="num-servings-table">--</span> serv.)</td>
+            <td id="you-total-serving">$--</td>
+            <td id="hellofresh-total">$--</td>
+            <td id="savings-total" class="text-green-600 font-semibold">$--</td>
+          </tr>
+        </tbody>
+      </table>
+
+<!-- Optional output for debug info -->
+<div id="cost-output" class="text-sm text-gray-600 mt-4"></div>
+
+
+      <p class="text-sm text-gray-500 mt-4">
+        Estimated price range — not exact, but within bounds.
+      </p>
+</div>
+
+
+
+    <!-- 📋 Copy to Clipboard Section -->
+    <section class="py-20 bg-white text-center px-6">
+      <h2 class="text-3xl font-bold mb-4">Copy Your Weekly Plan</h2>
+      <p class="apple-subheadline mb-8 text-gray-500">
+        One click to copy your recipe plan and share or save it.
+      </p>
+
+      <button id="btn-copy-plan" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-full font-semibold">
+        Copy to Clipboard
+      </button>
+
+      <p id="copyMessage" class="hidden text-green-600 mt-4">
+        ✅ Copied to clipboard!
+      </p>
+    </section>
+
+
+
+    <!-- Delivery options -->
+    <section class="bg-black text-white py-20">
+      <h2 class="text-3xl font-bold text-center mb-4">Cheap Delivery at Your Door</h2>
+      <p class="apple-subheadline mb-12" style="color: #86868b;">
+        Get your ingredients delivered tomorrow with these affordable services.
+      </p>
+      <div class="space-y-6 max-w-xl mx-auto px-4">
+        <a href="https://www.walmart.ca/en/dp/landing-page?icid=cp_l1_page_grocery_delivery_pass_42528_T8KZHPYEJB"
+           target="_blank"
+           class="block rounded-xl bg-gray-800 p-6 hover:bg-gray-700 transition">
+          <h3 class="text-xl font-bold text-white">Walmart</h3>
+          <p class="text-md text-gray-300 mt-1">
+            Less than $8/month → Unlimited free next-day delivery.
+          </p>
+        </a>
+        <a href="https://www.realcanadiansuperstore.ca/en/pc-express-pass"
+           target="_blank"
+           class="block rounded-xl bg-gray-800 p-6 hover:bg-gray-700 transition">
+          <h3 class="text-xl font-bold text-white">Real Canadian Superstore</h3>
+          <p class="text-md text-gray-300 mt-1">
+            Around $2.50/month → Unlimited free pickup and delivery.
+          </p>
+        </a>
+      </div>
+    </section>
+
+    <!--feed back box --> 
+    <section class="py-20 bg-white text-center px-6">
+      <h2 class="text-3xl font-bold mb-4">Tell Us How to Improve</h2>
+ 
+
+      <div class="max-w-3xl mx-auto">
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdZtoKcIYkr6RZJjyd0xX5BL6Z0ORfNERmg5K8Av7uInmg4VQ/viewform?embedded=true" 
+          width="100%" 
+          height="600" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          class="rounded-xl border shadow">
+          Loading…
+        </iframe>
+      </div>
+    </section>
+
+
+    <!-- Teaser / Next up -->
+    <section class="py-20 bg-white text-center px-6">
+      <p class="text-gray-500 text-md mb-2">See what we’re building next</p>
+      <h2 class="text-3xl font-bold mb-2">Dinner. Done. No Hands.</h2>
+      <p class="text-gray-600 text-lg mb-12">Any recipe. Found online. Cooked for you.</p>
+      <div class="flex flex-wrap justify-center gap-8">
+        <img src="images/body.png" alt="Smart Cooking Arm" class="w-[320px] rounded-2xl shadow-md" />
+        <img src="images/tools.jpg" alt="Interchangeable Tools" class="w-[320px] rounded-2xl shadow-md" />
+      </div>
+    </section>
+
+    <!-- EXTERNAL TOOLS-->
+    <script type="module" src="./js/findMeal.js"></script>
+    <script type="module" src="./js/getShopList.js"></script>
+    <script type="module" src="./js/compareCost.js"></script>
+    <script type="module" src="./js/copyClipBoard.js"></script>
+
+
+    
+  </div>
+</body>
+</html>

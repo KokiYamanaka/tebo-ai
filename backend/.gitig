@@ -1,0 +1,12 @@
+# === Python virtual environments ===
+venv/
+env/
+ENV/
+.venv/
+
+# === Python bytecode cache ===
+__pycache__/
+*.py[cod]
+
+# === macOS system files ===
+.DS_Store

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AirCook – Japanese Smart Meal Planning</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ✅ Firebase SDKs -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+    import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDnt2f0E1R-cqFhClfN9TIexMRR8QVHWuc",
+      authDomain: "tebo-mvp.firebaseapp.com",
+      projectId: "tebo-mvp",
+      storageBucket: "tebo-mvp.appspot.com",
+      messagingSenderId: "900009146880",
+      appId: "1:900009146880:web:f23adda57832b4230ff6e5",
+      measurementId: "G-M8SQPXSKGW" // safe to keep, but not used here
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    window.signInAndRedirect = function () {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          // ✅ Skip GA tracking
+          // gtag('config', 'G-VRBD51JD3V', { user_id: result.user.uid }); ← Removed
+          window.location.href = "app.html";
+        })
+        .catch((error) => {
+          alert("Google sign-in failed: " + error.message);
+        });
+    };
+  </script>
+</head>
+
+<body>
+  <section class="hero-section" style="padding: 120px 20px; text-align: center;">
+   <h1 class="apple-headline" style="margin: 0;">
+      <span class="small-text" style="font-size: 1.5rem;">Cook</span><br>
+
+      <span class="big-text" style="display: block; font-size: 2.5rem; font-weight: 600; color: #27ae60;">
+        Diverse
+      </span>
+
+      <span class="big-text" style="display: block; font-size: 2.5rem; font-weight: 600; color: #0070f3;">
+        15 Minutes
+      </span>
+
+      <span class="big-text" style="display: block; font-size: 2.5rem; font-weight: 600; color: #8e44ad;">
+        Big Flavor
+      </span>
+
+      <span class="big-text" style="display: block; font-size: 2.5rem; font-weight: 600; color: #e67e22;">
+        Small Cost
+      </span>
+    </h1>
+
+   <p style="font-size: 0.95rem; max-width: 600px; margin: 40px auto 30px; color: #444; text-align: center;">
+      <strong style="display: block; margin-bottom: 16px;">Sick of costly meal kits?</strong>
+
+      <div style="white-space: nowrap; overflow-wrap: normal; margin-bottom: 10px;">
+        Tebo helps you explore bold, fast home-style meals
+      </div>
+
+      <div style="white-space: nowrap; overflow-wrap: normal; margin-bottom: 10px;">
+        Starting with authentic Japanese flavors 🇯🇵
+      </div>
+
+      <div style="white-space: nowrap; overflow-wrap: normal;">
+        It even builds your grocery list
+      </div>
+    </p>
+
+
+
+
+
+
+    <img src="./images/features.jpeg" alt="Tebo 3-step flow"
+     style="max-width: 600px; width: 100%; height: auto; margin: 20px auto; display: block;" />
+
+    <button onclick="signInAndRedirect()" class="apple-button" style="margin-top: 40px;">
+      Get Started for Free
+    </button>
+
+  </section>
+
+
+  <header style="position: fixed; top: 0; left: 0; padding: 20px; z-index: 999;">
+    <img src="./images/logo.png" alt="Company Logo" style="height: 80px;" />
+  </header>
+
+
+</body>
+
+</html>

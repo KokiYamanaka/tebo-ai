@@ -1,0 +1,163 @@
+/* style.css */
+
+/* 1. Global Styles & Apple Font Stack */
+body {
+    background-color: #f5f5f7; /* Apple's standard light grey background */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1d1d1f; /* Apple's primary text color (near-black) */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2. Typography System */
+.apple-headline {
+    font-size: clamp(40px, 5.5vw, 64px); /* Responsive font size */
+    font-weight: 600;
+    line-height: 1.1;
+    color: #1d1d1f;
+}
+
+.apple-subheadline {
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 400;
+    color: #6e6e73; /* Apple's secondary text color (grey) */
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* 3. Interactive Elements (Buttons & Inputs) */
+.apple-button {
+    background-color: #007aff; /* Apple's signature blue */
+    color: white;
+    font-size: 17px;
+    font-weight: 400;
+    padding: 12px 24px;
+    border-radius: 9999px; /* Pill shape */
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.apple-button:hover {
+    background-color: #1a8cff; /* Lighter blue on hover */
+}
+
+.apple-input {
+    font-size: 17px;
+    padding: 12px 20px;
+    border-radius: 9999px; /* Pill shape */
+    border: 1px solid #d2d2d7;
+    background-color: #fff;
+    width: 240px; /* Wider for better look */
+    text-align: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.apple-input:focus {
+    outline: none;
+    border-color: #007aff;
+    box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.2); /* Focus ring */
+}
+
+/* 4. Component Styles (Cards, Table, etc.) */
+
+/* Applying Apple's subtle shadow and feel to your existing cards */
+.card {
+    border: 1px solid #d2d2d7;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    color: #1d1d1f;
+}
+
+.card-desc {
+    color: #6e6e73;
+}
+
+/* Apple-style Table */
+.apple-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 15px;
+}
+
+.apple-table th, .apple-table td {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.apple-table thead th {
+    font-weight: 600;
+    color: #6e6e73;
+    border-bottom: 1px solid #d2d2d7;
+}
+
+.apple-table tbody td {
+    color: #1d1d1f;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.apple-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Utility to hide scrollbar */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* style.css */
+
+/* ... (all your existing CSS rules) ... */
+
+
+/* --- ADD THIS FIX AT THE END --- */
+
+/* Fix for invisible text in Shopping List cards */
+#content-meat,
+#content-vegetables,
+#content-seasonings,
+#content-oils,
+#content-others {
+    color: #1d1d1f; /* Use Apple's primary dark text color for readability */
+}
+
+ 
+.small-text {
+font-size: 1.5rem;
+}
+
+.big-text {
+font-size: 2.8rem;
+font-weight: 600;
+display: inline-block;
+margin: 0 4px;
+}
+
+@media (max-width: 600px) {
+.big-text {
+display: block;
+margin: 8px 0;
+}
+}
